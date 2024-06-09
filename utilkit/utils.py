@@ -44,6 +44,6 @@ def get_kwargs(default_config_path: Path) -> argparse.ArgumentParser:
         '-l', '--logger_level', metavar='<logger_level>',
         type=int,
         help=yaml.dump(logging.getLevelNamesMapping()),
-        default=20
+        default=logging.INFO
     )
     return parser
