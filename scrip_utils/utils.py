@@ -1,4 +1,4 @@
-# utilkit/utils.py
+# scrip_utils/utils.py
 import argparse
 import logging
 import sys
@@ -12,7 +12,6 @@ def get_config(path: Path) -> Dict[str, Any]:
     with open(str(path)) as conf_file:
         exp_config = yaml.load(conf_file, Loader=yaml.Loader)
     return exp_config
-
 
 
 def get_logger(
