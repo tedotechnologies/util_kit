@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "util-kit"
+version = "0.1.0"
+description = "An essential utility library for Python scripts, offering robust functions for reading YAML configurations, initializing loggers, and parsing command-line arguments."
+authors = ["Yuriy Simonov <yuriy.simonov@tedotechnologies.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pyyaml = "^6.0.1"
+setuptools = "^70.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
