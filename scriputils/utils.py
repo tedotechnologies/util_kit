@@ -1,4 +1,4 @@
-# scrip_utils/utils.py
+# scriputils/utils.py
 import argparse
 import logging
 import sys

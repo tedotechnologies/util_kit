@@ -4,7 +4,7 @@ import tempfile
 import logging
 import yaml
 from pathlib import Path
-from scrip_utils import get_config, get_logger, get_kwargs
+from scriputils import get_config, get_logger, get_kwargs
 
 
 class TestUtils(unittest.TestCase):
