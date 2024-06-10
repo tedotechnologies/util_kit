@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="scriputils",
-    version="0.1.0",
+    version="0.1.1",
     packages=find_packages(),
     install_requires=[
         'pyyaml',
@@ -13,8 +13,8 @@ setup(
             # Если хотите создать консольный скрипт
         ],
     },
-    author="Ваше Имя",
-    author_email="your.email@example.com",
+    author="Yuriy Simonov",
+    author_email="simonovyup@gmail.com",
     description="A utility library for various scripts",
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
@@ -24,5 +24,5 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.9',
 )

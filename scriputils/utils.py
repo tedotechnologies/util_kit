@@ -49,7 +49,7 @@ def get_logger(
     file_handler.setFormatter(formatter)
 
     # create logger
-    logger = logging.getLogger(name=logger_name)
+    logger = logging.getLogger()
     logger.addHandler(file_handler)
     logger.setLevel(level)
     if add_stdout:
