@@ -18,7 +18,8 @@ def get_logger(
         logger_name: str | None = None,
         path: Path | None = None,
         level: int = logging.DEBUG,
-        add_stdout: bool = False) -> logging.Logger:
+        add_stdout: bool = False
+) -> logging.Logger:
     """
     Get logger with file handler
     Parameters
@@ -49,7 +50,7 @@ def get_logger(
     file_handler.setFormatter(formatter)
 
     # create logger
-    logger = logging.getLogger()
+    logger = logging.getLogger(logger_name)
     logger.addHandler(file_handler)
     logger.setLevel(level)
     if add_stdout:
