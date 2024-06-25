@@ -59,6 +59,7 @@ def get_logger(
         stdout_handler.setLevel(level)
         stdout_handler.setFormatter(formatter)
         logger.addHandler(stdout_handler)
+    logging.basicConfig(level=level, handlers=logger.handlers)
     return logger
 
 
