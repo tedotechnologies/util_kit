@@ -3,8 +3,11 @@ import argparse
 import logging
 import sys
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Dict, Any
+
 import yaml
+
+from scriputils.constants import get_mapping
 
 
 def get_config(path: Path) -> Dict[str, Any]:
@@ -76,7 +79,7 @@ def get_kwargs(default_config_path: Path) -> argparse.ArgumentParser:
     parser.add_argument(
         '-l', '--logger_level', metavar='<logger_level>',
         type=int,
-        help=yaml.dump(logging.getLevelNamesMapping()),
+        help=yaml.dump(get_mapping()),
         default=logging.INFO
     )
     return parser
