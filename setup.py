@@ -9,9 +9,7 @@ setup(
         'pyyaml',
     ],
     entry_points={
-        'console_scripts': [
-            # Если хотите создать консольный скрипт
-        ],
+        'console_scripts': [],
     },
     author="Yuriy Simonov",
     author_email="simonovyup@gmail.com",
