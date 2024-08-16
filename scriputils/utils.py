@@ -47,22 +47,26 @@ def get_logger(
         "%(levelname)-8s [%(asctime)s] %(name)s:%(lineno)d: %(message)s"
     )
 
-    # create file handler
-    file_handler = logging.FileHandler(filename)
-    file_handler.setLevel(level)
-    file_handler.setFormatter(formatter)
-
     # create logger
     logger = logging.getLogger(logger_name)
-    logger.addHandler(file_handler)
+
+    # Prevent adding handlers multiple times
+    if not logger.hasHandlers():
+        # create file handler
+        file_handler = logging.FileHandler(filename)
+        file_handler.setLevel(level)
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+
+        if add_stdout:
+            # create stdout handler
+            stdout_handler = logging.StreamHandler(sys.stdout)
+            stdout_handler.setLevel(level)
+            stdout_handler.setFormatter(formatter)
+            logger.addHandler(stdout_handler)
+
     logger.setLevel(level)
-    if add_stdout:
-        # create stdout handler
-        stdout_handler = logging.StreamHandler(sys.stdout)
-        stdout_handler.setLevel(level)
-        stdout_handler.setFormatter(formatter)
-        logger.addHandler(stdout_handler)
-    logging.basicConfig(level=level, handlers=logger.handlers)
+
     return logger
 
 
