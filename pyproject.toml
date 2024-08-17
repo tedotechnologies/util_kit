@@ -10,7 +10,6 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
-logging = "^0.4.9.6"
 setuptools = "^72.2.0"
 pyyaml = "^6.0.2"
 
