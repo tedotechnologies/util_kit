@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "scriputils"
-version = "0.2.3"
+version = "0.2.4"
 description = "An essential utility library for Python scripts, offering robust functions for reading YAML configurations, initializing loggers, and parsing command-line arguments."
 authors = [
     "donaId <simonovyup@gmail.com>"
@@ -10,7 +10,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
-setuptools = "^72.2.0"
+setuptools = "^70.1.1"
 pyyaml = "^6.0.2"
 
 
