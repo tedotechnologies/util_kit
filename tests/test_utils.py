@@ -34,7 +34,7 @@ class TestUtils(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             temp_dir_path = Path(temp_dir)
             logger = get_logger(logger_name='test_logger', path=temp_dir_path,
-                                level=logging.DEBUG)
+                                level=logging.DEBUG, add_stdout=True)
 
             self.assertEqual(logger.name, 'test_logger')
             self.assertEqual(logger.level, logging.DEBUG)

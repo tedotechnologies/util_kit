@@ -44,29 +44,28 @@ def get_logger(
 
     # create formatter with level name, module, line number, time and message
     formatter = logging.Formatter(
-        "%(levelname)-8s [%(asctime)s] %(name)s:%(lineno)d: %(message)s"
+        "%(asctime)s - %(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s"
     )
 
     # create logger
-    logger = logging.getLogger(logger_name)
+    root_logger = logging.getLogger()
+    root_logger.setLevel(level)
 
     # Prevent adding handlers multiple times
-    if not logger.hasHandlers():
+    if not any(isinstance(handler, logging.FileHandler) and handler.baseFilename == str(filename) for handler in root_logger.handlers):
         # create file handler
-        file_handler = logging.FileHandler(filename)
+        file_handler = logging.FileHandler(filename, mode="a", encoding="utf-8")
         file_handler.setLevel(level)
         file_handler.setFormatter(formatter)
-        logger.addHandler(file_handler)
-
-        if add_stdout:
-            # create stdout handler
-            stdout_handler = logging.StreamHandler(sys.stdout)
-            stdout_handler.setLevel(level)
-            stdout_handler.setFormatter(formatter)
-            logger.addHandler(stdout_handler)
-
+        root_logger.addHandler(file_handler)
+    if add_stdout:
+        # create stdout handler
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(level)
+        console_handler.setFormatter(formatter)
+        root_logger.addHandler(console_handler)
+    logger = logging.getLogger(logger_name)
     logger.setLevel(level)
-
     return logger
 
 
