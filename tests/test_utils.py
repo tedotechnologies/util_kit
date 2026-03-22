@@ -1,10 +1,15 @@
-# tests/test_utils.py
-import unittest
-import tempfile
+"""tests/test_utils.py
+
+Tests for scriputils utility functions.
+"""
 import logging
-import yaml
+import tempfile
+import unittest
 from pathlib import Path
-from scriputils import get_config, get_logger, get_kwargs
+
+import yaml
+
+from scriputils import get_config, get_kwargs, get_logger
 
 
 class TestUtils(unittest.TestCase):
@@ -45,7 +50,7 @@ class TestUtils(unittest.TestCase):
 
             # Проверка записи логов
             logger.debug('This is a debug message')
-            with open(log_file, 'r') as f:
+            with open(log_file, "r", encoding="utf-8") as f:
                 log_content = f.read()
             self.assertIn('This is a debug message', log_content)
 
