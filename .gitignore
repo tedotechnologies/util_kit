@@ -1,7 +1,15 @@
 **/.idea/
 **/__pycache__/
+*.pyc
 
-# Byte-compiled / optimized / DLL files
+# Build artifacts
+dist/
+*.egg-info/
 *.gz
 *.whl
+
+# Environment
+.env
+.venv/
+
 **/.DS_Store
